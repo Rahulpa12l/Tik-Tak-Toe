@@ -3,6 +3,7 @@ let resetbtn=document.querySelector("#reset-btn");
 let newGame = document.querySelector("#new-btn");
 let msgcontainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
+let container = document.querySelector("#maincont");
 
 let trueO=true; 
 
@@ -21,6 +22,7 @@ const resetGame = () =>{
     trueO =true;
     enableBoxes();
     msgcontainer.classList.add("hide");
+    container.classList.remove("hide");
 };
 
 boxes.forEach(box => {
@@ -75,6 +77,7 @@ const checkwinner = () => {
             if(pos1val===pos2val && pos2val===pos3val){
         
                 showWinner(pos1val);
+                container.classList.add("hide");
             }
         }
     }
